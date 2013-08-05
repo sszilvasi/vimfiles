@@ -14,12 +14,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
+Bundle 'markabe/bufexplorer'
+Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'taglist.vim'
 
 
 " General
 syntax on
+filetype plugin indent on
 
 " Status line
 set ruler
@@ -30,6 +33,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+set expandtab " replace tabs with spaces
 
 " Search
 set wrapscan
@@ -47,8 +51,22 @@ nmap <A-Left> :bp<CR>
 set mouse=a
 set ttymouse=xterm2
 
-" Edit the vimrc file
+" Mappings
 let mapleader = ","
-nmap <silent> <Leader>ev :e $MYVIMRC<CR>
+let maplocalleader = "\\"
+
+nmap <silent> <Leader>ev :e ~/.vim/vimrc<CR>
 nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 
+
+"------------------- Experimental ------------------------
+"
+" <c-l> to clear the highlight as well as redraw
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+
+nnoremap <leader>b :BufExplorer<cr>
+
+"set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:·\ ,eol:¬,extends:>,precedes:<
+set nolist
