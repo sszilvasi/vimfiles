@@ -1,6 +1,11 @@
 
 " Remove toolbar
-set guioptions-=T
+set guioptions-=T " remove toolbar
+set guioptions-=m " remove menu bar
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
 
 " Font
 " Further fonts to consider:

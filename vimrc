@@ -16,13 +16,19 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'markabe/bufexplorer'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'klen/python-mode'
+Bundle 'SirVer/ultisnips'
 
+"Bundle 'Source-Explorer-srcexpl.vim'
+"Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
+
 
 
 " General
 syntax on
 filetype plugin indent on
+set number
 
 " Status line
 set ruler
@@ -61,12 +67,35 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 "------------------- Experimental ------------------------
 "
-" <c-l> to clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
+set cursorline
+
+" <C-l> to clear the highlight as well as redraw
+nnoremap <C-L> :nohls<CR>
 inoremap <C-L> <C-O>:nohls<CR>
 
-nnoremap <leader>b :BufExplorer<cr>
+nmap <F6> :TlistToggle<CR>
+map <F8> :execute '!ctest -V -R ' . expand('%:t:r')<CR>
+map <F9> :execute '!gr_plot_iq ../apps/out.dat -B 10'
+map <F10> :execute '!make -j 4 && make install'<CR>
+
+map <C-S-j> <Esc>/<+<CR><Esc>cf>
+map <C-S-j> <Esc>/<+<CR><Esc>cf>
+
+"nnoremap <leader>b :BufExplorer<cr>
+map <C-S-b> <ESC>:BufExplorer<CR>
 
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set listchars=tab:·\ ,eol:¬,extends:>,precedes:<
 set nolist
+
+let g:pymode_lint_write = 0
+
+augroup ft_python
+    au!
+    au FileType python setlocal omnifunc=pysmell#Complete
+    au FileType python setlocal sw=4 sts=4 ts=4
+    au FileType python set textwidth=79
+    au Filetype python setlocal foldmethod=expr
+augroup END
+
+
