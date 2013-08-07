@@ -30,6 +30,19 @@ syntax on
 filetype plugin indent on
 set number
 
+" Theme
+set t_Co=256
+set novisualbell
+"let g:jellybeans_overrides = {
+"\    'Search': { 'guifg': 'fad07a', 'guibg': '353535',
+"\              'ctermfg': 'Black', 'ctermbg': 'Yellow'}
+"\}
+let g:jellybeans_overrides = {
+\    'Search': { 'guifg': 'f0a0c0', 'guibg': '353535',
+\              'ctermfg': 'Black', 'ctermbg': 'Yellow', 'attr': 'underline'}
+\}
+colo jellybeans
+
 " Status line
 set ruler
 set showcmd
