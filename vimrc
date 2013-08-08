@@ -81,21 +81,23 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 "------------------- Experimental ------------------------
 "
 set cursorline
+set foldlevel=2
 
 " <C-l> to clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR>
 inoremap <C-L> <C-O>:nohls<CR>
 
 nmap <F6> :TlistToggle<CR>
-map <F8> :execute '!ctest -V -R ' . expand('%:t:r')<CR>
 map <F9> :execute '!gr_plot_iq ../apps/out.dat -B 10'
-map <F10> :execute '!make -j 4 && make install'<CR>
+map <F11> :execute '!make -j 4 && make install'<CR>
+map <F12> :execute '!ctest -V -R ' . expand('%:t:r')<CR>
 
 map <C-S-j> <Esc>/<+<CR><Esc>cf>
-map <C-S-j> <Esc>/<+<CR><Esc>cf>
+"map <C-S-p> <Esc>:CtrlPBookmarkDir<CR>
+"map <C-m> <ESC>:CtrlPBookmarkDir<CR>
 
 "nnoremap <leader>b :BufExplorer<cr>
-map <C-S-b> <ESC>:BufExplorer<CR>
+map <C-m> <ESC>:BufExplorer<CR>
 
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set listchars=tab:·\ ,eol:¬,extends:>,precedes:<
