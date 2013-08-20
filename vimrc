@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'markabe/bufexplorer'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'SirVer/ultisnips'
 
@@ -98,6 +99,7 @@ map <C-S-j> <Esc>/<+<CR><Esc>cf>
 
 "nnoremap <leader>b :BufExplorer<cr>
 map <C-m> <ESC>:BufExplorer<CR>
+map <C-e> <ESC>:NERDTreeToggle<CR>
 
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set listchars=tab:·\ ,eol:¬,extends:>,precedes:<
@@ -113,4 +115,8 @@ augroup ft_python
     au Filetype python setlocal foldmethod=expr
 augroup END
 
+" CTRL-S for saving
+noremap <C-S>		:update<CR>
+vnoremap <C-S>		<C-C>:update<CR>
+inoremap <C-S>		<C-O>:update<CR>
 
