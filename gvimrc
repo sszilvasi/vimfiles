@@ -1,3 +1,5 @@
+" Author: Sandor Szilvasi
+" Source: http://github.com/sszilvasi/vimfiles/gvimrc
 
 " Remove toolbar
 set guioptions-=T " remove toolbar
