@@ -16,6 +16,7 @@ git clone https://sszilvasi@github.com/sszilvasi/vimfiles.git ~/.vim
 # Vundle
 if [ -d ~/.vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim -c "BundleUpdate" -c "qa"
 fi
 
 # Install
