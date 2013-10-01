@@ -1,7 +1,7 @@
 " Author: Sandor Szilvasi
 " Source: http://github.com/sszilvasi/dotfiles/vimrc
 
-" TODO: Comments
+" TODO: Windows vs. Linux
 
 set nocompatible
 
@@ -24,6 +24,7 @@ Bundle 'SirVer/ultisnips'
 "Bundle 'wesleyche/SrcExpl'
 Bundle 'taglist.vim'
 
+Bundle 'christoomey/vim-tmux-navigator'
 
 
 " General
@@ -34,13 +35,11 @@ set number
 " Theme
 set t_Co=256
 set novisualbell
-"let g:jellybeans_overrides = {
-"\    'Search': { 'guifg': 'fad07a', 'guibg': '353535',
-"\              'ctermfg': 'Black', 'ctermbg': 'Yellow'}
-"\}
+set cursorline
+set foldlevel=2
 let g:jellybeans_overrides = {
-\    'Search': { 'guifg': 'f0a0c0', 'guibg': '353535',
-\              'ctermfg': 'Black', 'ctermbg': 'Yellow', 'attr': 'underline'}
+\    'Search': { 'guifg': 'fad07a', 'guibg': '353535',
+\              'ctermfg': 'Black', 'ctermbg': 'Yellow'}
 \}
 colo jellybeans
 
@@ -80,24 +79,18 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 
 
 "------------------- Experimental ------------------------
-"
-set cursorline
-set foldlevel=2
 
 " <C-l> to clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR>
 inoremap <C-L> <C-O>:nohls<CR>
 
 nmap <F6> :TlistToggle<CR>
-map <F9> :execute '!gr_plot_iq ../apps/out.dat -B 10'
 map <F11> :execute '!make -j 4 && make install'<CR>
 map <F12> :execute '!ctest -V -R ' . expand('%:t:r')<CR>
 
 map <C-S-j> <Esc>/<+<CR><Esc>cf>
-"map <C-S-p> <Esc>:CtrlPBookmarkDir<CR>
-"map <C-m> <ESC>:CtrlPBookmarkDir<CR>
+nmap <silent> <Leader>p <ESC>:CtrlPBookmarkDir<CR>
 
-"nnoremap <leader>b :BufExplorer<cr>
 map <C-m> <ESC>:BufExplorer<CR>
 map <C-e> <ESC>:NERDTreeToggle<CR>
 
