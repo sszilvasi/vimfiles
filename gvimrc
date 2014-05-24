@@ -10,27 +10,26 @@ set guioptions-=r
 set guioptions-=R
 
 " Font
-" Further fonts to consider:
-" - Deja Vu Sans Mono
-" - Inconsolata
-" - Source Code Pro
+if has("unix")
+    set guifont=Ubuntu\ Mono\ 13
+    "set guifont=Inconsolata\ 11
+    "set guifont=DejaVu\ Sans\ Mono\ 11
+    "set guifont=Courier\ New\ 11
+endif
 
-" > Linux
-"set guifont=Ubuntu\ Mono\ 14 " Check
-set guifont=Consolas\ 12 " Check
-"set guifont=Courier\ New\ 12
+if has("win32")
+    set guifont=Consolas\ 14
+endif
 
-" > Windows
-"set guifont=Consolas\ 14
-
-" > Mac
-" Menlo
-" Monaco
+if has("mac")
+    " Monaco
+    set guifont=Menlo:h15
+    "set guifont=Monaco:h15
+endif
 
 " Color scheme
-" Mustang
 colo jellybeans
-":colo desert
 ":colo railscasts
 ":colo twilight
+":colo desert
 
